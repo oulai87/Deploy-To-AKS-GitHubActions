@@ -1,0 +1,13 @@
+﻿@page "/"
+
+<h1>Hello, from @hostName</h1>
+
+Welcome to your new app.
+
+@code {
+    private string hostName;
+
+    protected override void OnInitialized(){
+        hostName = Environment.MachineName;
+    }
+}
