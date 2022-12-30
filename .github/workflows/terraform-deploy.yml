@@ -24,8 +24,8 @@ inputs:
     description: 'The Terraform version to use'
     required: true
     default: '1.1.9'
-  GITHUB_TOKEN: 
-    description: 'The secrets.GITHUB_TOKEN so that the action can create a comment on the PR'
+  GITHAB_TOKEN: 
+    description: 'The secrets.GITHAB_TOKEN so that the action can create a comment on the PR'
     required: true
 
 branding:
@@ -99,7 +99,7 @@ runs:
     - uses: actions/github-script@v6
       if: github.event_name == 'pull_request'
       with:
-        github-token: ${{ inputs.GITHUB_TOKEN }}
+        github-token: ${{ inputs.GITHAB_TOKEN }}
         script: |
           const fs = require("fs");
           const plan = fs.readFileSync("/tmp/plan.txt", "utf8");
